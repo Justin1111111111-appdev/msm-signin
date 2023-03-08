@@ -81,7 +81,7 @@
         </td>
 
         <td>
-          <%= a_bookmark.movie.title %>
+          <a href="/bookmarks/<%= a_bookmark.id %>"><%= a_bookmark.movie.title %>
         </td>
 
         <td>
@@ -92,9 +92,7 @@
         </td>
 
         <td>
-          <a href="/bookmarks/<%= a_bookmark.id %>">
-            Show details
-          </a>
+          <a href="">
         </td>
       </tr>
       <% end %>
