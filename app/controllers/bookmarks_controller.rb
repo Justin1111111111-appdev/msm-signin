@@ -24,9 +24,9 @@ class BookmarksController < ApplicationController
 
     if the_bookmark.valid?
       the_bookmark.save
-      redirect_to("/bookmarks", { :notice => "Bookmark created successfully." })
+      redirect_to("/movies/#{the_bookmark.movie_id}", { :notice => "Bookmark created successfully." })
     else
-      redirect_to("/bookmarks", { :alert => the_bookmark.errors.full_messages.to_sentence })
+      redirect_to("/movies/#{the_bookmark.movie_id}", { :alert => the_bookmark.errors.full_messages.to_sentence })
     end
   end
 
@@ -51,6 +51,6 @@ class BookmarksController < ApplicationController
 
     the_bookmark.destroy
 
-    redirect_to("/bookmarks", { :notice => "Bookmark deleted successfully."} )
+    redirect_to("/movies/#{the_bookmark.movie_id}", { :notice => "Bookmark deleted successfully."} )
   end
 end
